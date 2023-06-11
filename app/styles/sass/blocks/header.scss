@@ -1,0 +1,92 @@
+.header {
+   height: 100vh;
+   background: url('/images/dist/header-bg.jpg') center/cover no-repeat;
+
+   &-top {
+      display: flex;
+      align-items: center;
+      color: $white;
+      line-height: 1.2;
+
+      &__title {
+         margin-left: 1rem;
+      }
+
+      &__contacts {
+         margin-left: auto;
+         background: rgba(#2DB1FB, .1);
+         backdrop-filter: blur(3.5px);
+         padding: 4rem 3rem 2rem;
+
+         & > div {
+            display: flex;
+            flex-direction: column;
+         }
+
+         span {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 1.1rem;
+            letter-spacing: .1px;
+         }
+      }
+
+      &__link {
+         font-weight: bold;
+         color: $white;
+         text-decoration: none;
+      }
+   }
+
+   &-composition {
+      max-width: 70rem;
+      margin: 0 auto;
+      color: $white;
+      margin-top: 12%;
+      text-align: center;
+
+      &__title {
+         font-size: 4.8rem;
+         line-height: 1.1;
+         font-weight: bold;
+         text-transform: uppercase;
+         text-align: center;
+
+         span {
+            font-size: 6rem;
+            font-weight: 200;
+            letter-spacing: 1px;
+         }
+      }
+
+      &__bullets {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         padding: 0 5rem;
+         margin-top: 3rem;
+         row-gap: 2rem;
+      }
+
+      &__bullet {
+         display: flex;
+         align-items: center;
+         font-size: 1.2rem;
+         font-weight: 600;
+
+         img {
+            display: inline-block;
+            margin-right: 1rem;
+         }
+      }
+   }
+
+   &__btn {
+      display: inline-block;
+      margin-top: 7rem;
+      padding: 3rem 11.5rem;
+      box-shadow: 0 0 15rem rgba(45, 177, 251, .5);
+      font-weight: bold;
+      font-size: 2rem;
+   }
+}

@@ -1,0 +1,102 @@
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;
+}
+
+html {
+   font-size: 62.5%;
+   box-sizing: border-box;
+}
+
+img {
+   max-width: 100%;
+}
+
+.container {
+   max-width: 120rem;
+   padding: 0 1.5rem;
+   margin: 0 auto;
+}
+
+.section {
+   padding: 5rem 0
+}
+
+.logo {
+   display: inline-block;
+   max-height: 7rem;
+}
+
+.section-benefits {
+   background: url('/images/dist/benefits-bg.png') center 5rem no-repeat;
+   padding-top: 10rem;
+}
+
+.benefits {
+   display: flex;
+   gap: 6rem;
+}
+
+.benefit {
+   display: flex;
+   justify-content: center;
+   text-align: center;
+   position: relative;
+   color: $white;
+
+   &__icon {
+      &--1 {
+         max-width: 7rem;
+      }
+
+      &--2 {
+         max-width: 5.5rem;
+      }
+
+      &--3 {
+         max-width: 8rem;
+      }
+   }
+
+   &__title {
+      font-weight: bold;
+      font-size: 2.2rem;
+      margin: 2rem 0 1.5rem;
+   }
+
+   &__content {
+      position: absolute;
+      bottom:25%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+   }
+
+   &__text {
+      font-size: 1.4rem;
+
+      &::after {
+         content: '';
+         position: absolute;
+         display: block;
+         height: 1px;
+         background: #fbfbfb;
+         width: 10rem;
+         left: 50%;
+         bottom: -2rem;
+         transform: translateX(-50%);
+      }
+   }
+}
+
+.section-form {
+   padding-bottom: 7rem;
+   background:
+      url('/images/dist/dots-left.png') left 20% no-repeat,
+      url('/images/dist/dots-right.png') right top no-repeat,
+      linear-gradient(to top, #ECF8FF 0, #ECF8FF 15rem, #f3f9fd 15rem, #fff);
+   background-size: auto 50%, auto 50%, cover;
+}

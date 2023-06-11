@@ -1,0 +1,22 @@
+.btn {
+   color: $white;
+   text-transform: uppercase;
+   text-decoration: none;
+   border: none;
+   font-weight: bold;
+   cursor: pointer;
+
+   &--gradient {
+      background: linear-gradient(126.82deg, #2DB1FB 10.33%, #2B7CB5 92%);
+      outline: 1px solid rgba($white, .3);
+      outline-offset: -1rem;
+   }
+
+   &--rounded {
+      background: linear-gradient(126.82deg, #2DB1FB 10.33%, #2B7CB5 92%);
+      outline: 1px solid rgba($white, .2);
+      outline-offset: -.5rem;
+      padding: 1.5rem 4rem;
+      border-radius: 3em;
+   }
+}

@@ -11,7 +11,7 @@ import webpackStream from 'webpack-stream'
 import webpack       from 'webpack'
 import TerserPlugin  from 'terser-webpack-plugin'
 import gulpSass      from 'gulp-sass'
-import dartSass      from 'sass'
+import * as dartSass      from 'sass'
 import sassglob      from 'gulp-sass-glob'
 const  sass          = gulpSass(dartSass)
 import less          from 'gulp-less'
