@@ -424,14 +424,88 @@ img {
    }
 }
 
+.section-action {
+   padding-top: 10rem;
+}
+
 .action {
    display: flex;
 
+   & > div {
+      min-height: 25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+   }
+
    &__left {
-      flex-basis: 55%;
+      flex-basis: 52%;
+      background: url('../images/dist/action-bg-1.png') left center no-repeat;
+      background-size: 100%;
+      color: $white;
+
+      span {
+         font-weight: 500;
+      }
    }
 
    &__right {
+      flex-basis: 48%;
+      background: url('../images/dist/action-bg-2.png') left center no-repeat;
+      background-size: 100%;
+      color: $accent;
+   }
+
+   &__title {
+      font-weight: bold;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+   }
+
+   &__content {
+      line-height: 1.6;
+      span {
+         font-weight: bold;
+      }
+   }
+}
+
+.districts {
+   display: flex;
+
+   &__left {
       flex-basis: 45%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      text-align: right;
+      padding: 0 8rem;
+      line-height: 1.3;
+   }
+
+   &__right {
+      flex-basis: 55%;
+   }
+
+   &__title {
+      color: $accent;
+      font-size: 6rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 2rem;
+
+      &::after {
+         content: '';
+         position: absolute;
+         bottom: 0;
+         right: 0;
+         height: 3px;
+         width: 50%;
+         background: $accent;
+         display: block;
+      }
    }
 }

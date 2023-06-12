@@ -1,0 +1,64 @@
+.district-card {
+   display: flex;
+   box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);
+   text-transform: uppercase;
+
+   &:not(:last-of-type) {
+      margin-bottom: 3rem;
+   }
+
+   &__left {
+      position: relative;
+      flex-basis: 40%;
+      flex-shrink: 0;
+   }
+
+   &__right {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+   }
+
+   &__title {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+   }
+
+   &__label {
+      position: absolute;
+      background: $accent;
+      color: $white;
+      left: 0;
+      bottom: 2.5rem;
+      padding: .4rem 2.2rem .4rem 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      clip-path: polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%);
+   }
+
+   &__img {
+      height: 100%;
+   }
+
+   &__info {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      grid-template-rows: repeat(3, min-content);
+      font-size: 1.2rem;
+      line-height: 1.2;
+      row-gap: 2rem;
+      margin-bottom: 2rem;
+   }
+
+   &__cost {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-weight: bold;
+   }
+
+   &__btn {
+      width: 100%;
+      margin-top: auto;
+   }
+}
