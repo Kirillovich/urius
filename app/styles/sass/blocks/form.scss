@@ -4,6 +4,21 @@
    box-shadow: 0 0 17.5rem rgba(9, 9, 9, .1);
    padding: 4rem 8rem;
    background: $white;
+   position: relative;
+
+   &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 120%;
+      height: 60%;
+      top: 50%;
+      left: -10%;
+      background: rgba(255, 255, 255, .3);
+      box-shadow: 0 0 17.5rem rgba(9, 9, 9, .1);
+      transform: translateY(-50%);
+      z-index: -1;
+   }
 
    &__title {
       font-weight: 500;
