@@ -15,6 +15,14 @@ img {
    max-width: 100%;
 }
 
+.h2 {
+   color: $accent;
+   font-weight: bold;
+   font-size: 3.5rem;
+   text-transform: uppercase;
+   margin-bottom: 5rem;
+}
+
 .container {
    max-width: 120rem;
    padding: 0 1.5rem;
@@ -31,7 +39,7 @@ img {
 }
 
 .section-benefits {
-   background: url('/images/dist/benefits-bg.png') center 5rem no-repeat;
+   background: url('../images/dist/benefits-bg.png') center 5rem no-repeat;
    padding-top: 10rem;
 }
 
@@ -95,16 +103,16 @@ img {
 .section-form {
    padding-bottom: 7rem;
    background:
-      url('/images/dist/dots-left.png') left 20% no-repeat,
-      url('/images/dist/dots-right.png') right top no-repeat,
+      url('../images/dist/dots-left.png') left 20% no-repeat,
+      url('../images/dist/dots-right.png') right top no-repeat,
       linear-gradient(to top, #ECF8FF 0, #ECF8FF 15rem, #f3f9fd 15rem, #fff);
    background-size: auto 50%, auto 50%, cover;
 }
 
 .section-advantages {
    background:
-      url('/images/dist/advantages-left-bg.png') left 20% no-repeat,
-      url('/images/dist/advantages-right-bg.png') right bottom 10% no-repeat;
+      url('../images/dist/advantages-left-bg.png') left 20% no-repeat,
+      url('../images/dist/advantages-right-bg.png') right bottom 10% no-repeat;
 }
 
 .advantages {
@@ -127,7 +135,7 @@ img {
    }
 
    &-right {
-      background: url('/images/dist/advantages-bg.png') center no-repeat;
+      background: url('../images/dist/advantages-bg.png') center no-repeat;
    }
 
    &__title {
@@ -216,3 +224,70 @@ img {
       font-size: 1.5rem;
    }
 }
+
+.section-how-work {
+   text-align: center;
+   background-image: linear-gradient(to bottom, rgba(230, 244, 251, 0.9), rgba(242, 248, 251, 0.9));
+}
+
+.how-work {
+
+   &__subtitle {
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 1rem;
+   }
+
+   &__path {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+
+      &-block {
+         flex-basis: 20%;
+         text-align: center;
+         padding: 5rem 2rem 5rem;
+         filter: drop-shadow(0 0 3rem rgba(0, 0, 0, .2));
+
+         &--1 {
+            background: url('../images/dist/path-1.png') left top no-repeat;
+            
+         }
+
+         &--2 {
+            background: url('../images/dist/path-2.png') left top no-repeat;
+         }
+
+         &--3 {
+            background: url('../images/dist/path-3.png') left top no-repeat;
+         }
+
+         &--4 {
+            background: url('../images/dist/path-4.png') left top no-repeat;
+         }
+      }
+
+      &-number {
+         font-size: 6rem;
+         font-weight: 600;
+         opacity: .25;
+         margin-bottom: 1rem;
+      }
+
+      &-title {
+         font-weight: bold;
+         color: $accent;
+         padding: 0 .5rem;
+         line-height: 1.2;
+      }
+
+      &-text {
+         font-weight: 500;
+         font-size: 1.3rem;
+         line-height: 1.2;
+         margin-top: 3rem;
+      }
+   }
+}
+
+.result
