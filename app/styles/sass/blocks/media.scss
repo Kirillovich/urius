@@ -1,0 +1,86 @@
+@media screen and (max-width: 1200px) {
+   .header {
+      height: 80vh;
+   }
+
+   .result {
+      &__title {
+         font-size: 2rem;
+      }
+   }
+
+   .districts {
+      &__left {   
+         padding: 0 3rem 0 0;
+         flex-basis: 30%;
+      }
+
+      &__right {
+         flex-basis: 70%;
+      }
+
+      &__title {
+         font-size: 4rem;
+      }
+   }
+
+   .advantage {
+      background: none;
+      filter: none;
+      box-shadow: 0 0 4rem rgba(0, 0, 0, .1);
+
+      &__content {
+         clip-path: none !important;
+      }
+   }
+
+   .advantages {
+      grid-template-rows: repeat(2,minmax(min-content, 1fr));
+
+      &-flex {
+         flex-wrap: wrap;
+      }
+
+      &-left {
+         flex-basis: 100%;
+         margin-bottom: 3rem;
+         text-align: center;
+         padding: 0;
+      }
+
+      &__title {
+         margin-top: 1rem;
+      }
+
+      &__subtitle {
+         
+      }
+   }
+
+   .office {
+      &__right {
+         font-size: 3rem;
+      }
+   }
+
+   .benefits {
+      gap: 3rem;
+   }
+
+   .benefit {
+      &__icon {
+         // max-height: 6rem;
+      }
+   }
+
+   .benefit {
+
+      &__content {
+         
+      }
+
+      &__bg {
+         
+      }
+   }
+}
