@@ -1,11 +1,21 @@
 @media screen and (max-width: 1200px) {
+   .section {
+      padding: 5rem 0;
+   }
+
    .header {
-      height: 80vh;
+      height: 90vh;
    }
 
    .result {
       &__title {
          font-size: 2rem;
+      }
+      
+      &-right {
+         img {
+            transform: none;
+         }
       }
    }
 
@@ -24,18 +34,9 @@
       }
    }
 
-   .advantage {
-      background: none;
-      filter: none;
-      box-shadow: 0 0 4rem rgba(0, 0, 0, .1);
-
-      &__content {
-         clip-path: none !important;
-      }
-   }
-
    .advantages {
-      grid-template-rows: repeat(2,minmax(min-content, 1fr));
+      grid-template-rows: repeat(2, min-content);
+      gap: 1.5rem;
 
       &-flex {
          flex-wrap: wrap;
@@ -50,10 +51,17 @@
 
       &__title {
          margin-top: 1rem;
+         padding: 0;
       }
+   }
 
-      &__subtitle {
-         
+   .advantage {
+      background: #fbfbfb;
+      box-shadow: 0 0 4rem rgba(0, 0, 0, .1);
+      padding: 3rem 2rem;
+
+      &__content {
+         padding: 0;
       }
    }
 
@@ -68,19 +76,267 @@
    }
 
    .benefit {
-      &__icon {
-         // max-height: 6rem;
+      &--1 {
+         background: url('../images/dist/shapes/shape-rounded-1.jpg') left top no-repeat;
+         background-size: cover;
       }
+
+      &--2 {
+         background: url('../images/dist/shapes/shape-rounded-2.jpg') left top no-repeat;
+         background-size: cover;
+      }
+
+      &--3 {
+         background: url('../images/dist/shapes/shape-rounded-3.jpg') left top no-repeat;
+         background-size: cover;
+      }
+
+      &__content {
+         padding: 3rem 2rem 2rem;
+      }
+   }
+
+   .clients {
+      grid-template-rows: repeat(2, min-content);
+      gap: 3rem;
+   }
+
+   .client {
+      background: #fbfbfb;
+      padding: 3rem 2rem;
+      filter: none;
+      box-shadow: 0 0 5rem rgba(0, 0, 0, .15);
+
+      &__text {
+         padding: 0 !important;
+      }
+   }
+}
+
+@media screen and (max-width: 900px) {
+   .header {
+      height: 75vh;
+
+      &__btn {
+         padding: 2rem 7rem;
+         margin-top: 4.5rem;
+      }
+   }
+
+   .section {
+      padding: 4rem 0;
+   }
+
+   .header-composition {
+      max-width: 66rem;
+      margin-top: 5%;
+
+      &__bullets {
+         gap: 1rem;
+         text-align: left;
+      }
+
+      &__title {
+         font-size: 4rem;
+      }
+
+      span {
+         font-size: 3.5rem;
+      }
+   }
+
+   .advantages {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .result {
+      flex-wrap: wrap;
+
+      &-left {
+         flex-basis: 100%;
+         order: 2;
+         padding: 2rem 0 0;
+      }
+   }
+
+   .benefits {
+      gap: 1.5rem;
    }
 
    .benefit {
+      flex-basis: 33.333333%;
+   }
 
-      &__content {
-         
+   .districts {
+      flex-wrap: wrap;
+
+      &__title {
+         margin-bottom: 3rem;
+
+         &::after {
+            left: 50%;
+            transform: translateX(-50%);
+         }
       }
 
-      &__bg {
-         
+      &__left {
+         flex-basis: 100%;
+         justify-content: center;
+         padding: 0;
+      }
+
+      &__right {
+         flex-basis: 100%;
       }
    }
+
+   .district-card {
+      &__left {
+         flex-basis: 35%;
+      }
+
+      &__right {
+         flex-basis: 65%;
+      }
+   }
+
+   .action {
+      & > div {
+         min-height: initial;
+         padding: 3rem 2rem;
+         justify-content: flex-start;
+      }
+
+      &__left {
+         background: $accent;
+      }
+      
+      &__right {
+         background: #ECF7FF;
+      }
+   }
+
+   .office {
+      flex-wrap: wrap;
+
+      &__left {
+         flex-basis: 100%;
+      }
+
+      &__right {
+         flex-basis: 100%;
+         order: -1;
+         padding: 0;
+         margin-bottom: 3rem;
+
+         &::after {
+            display: none;
+         }
+      }
+
+      &__bullets {
+         gap: 3rem;
+      }
+
+      &__bullet {
+         &::before {
+            width: 100%;
+         }
+      }
+
+      &__title {
+         font-size: 1.4rem;
+         padding: 0;
+      }
+   }
+
+   .clients {
+      width: 100%;
+      gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .how-work__path {
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      &-block {
+         flex-basis: calc(50% - 1rem);
+         background: #fbfbfb;
+      }
+   }
+
+   .form {
+      padding: 2.5rem 5rem;
+   }
+}
+
+@media screen and (max-width: 500px) {
+   html {
+      font-size: 55%;
+   }
+
+   .header {
+      height: 60vh;
+
+      &-composition {
+         &__title {
+            font-size: 2.5rem;
+
+            span {
+               font-size: 2rem;
+            }
+         }
+
+         &__bullets {
+            margin-top: 1.5rem;
+         }
+      }
+
+      &-top {
+         &__title {
+            display: none;
+         }
+
+         &__contacts {
+            padding-top: 2rem;
+            margin-right: -1.5rem;
+         }
+
+         .logo {
+            margin-top: .5rem;
+         }
+      }
+
+      &__btn {
+         margin-top: 3rem;
+      }
+   }
+
+   .section-benefits {
+      padding-bottom: 0;
+   }
+
+   .benefits {
+      flex-wrap: wrap;
+   }
+
+   .benefit {
+      flex-basis: 100%;
+      min-height: initial;
+      padding: 2rem 2rem 3rem;
+   }
+
+   .form {
+      padding: 2rem 3rem;
+
+      &__title {
+         max-width: initial;
+      }
+   }
+
+   .advantages {
+      grid-template-columns: 1fr;
+   }
+
 }
