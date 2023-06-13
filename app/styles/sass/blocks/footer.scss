@@ -1,0 +1,36 @@
+.footer {
+   background: url('../images/dist/footer-bg.jpg') center/cover no-repeat;
+   color: $white;
+   padding: 7rem 0 10rem;
+
+   &__inner {
+      display: flex;
+      align-items: center;
+   }
+
+   &__title {
+      margin-left: 1.5rem;
+   }
+
+   &__link {
+      color: $white;
+      text-decoration: none;
+   }
+
+   &__contacts {
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+
+      a {
+         font-size: 1.9rem;
+         font-weight: bold;
+      }
+
+      span {
+         font-weight: 300;
+         font-size: 1.3rem;
+         letter-spacing: .3px;
+      }
+   }
+}
