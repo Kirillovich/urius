@@ -5,19 +5,28 @@
    padding: 4rem 8rem;
    background: $white;
    position: relative;
+   z-index: 3;
 
-   &::after {
+   &::after,
+   &::before {
       content: '';
       position: absolute;
       display: block;
-      width: 120%;
+      width: 7rem;
       height: 60%;
       top: 50%;
-      left: -10%;
-      background: rgba(255, 255, 255, .3);
-      box-shadow: 0 0 17.5rem rgba(9, 9, 9, .1);
+      background: rgba(255, 255, 255, .1);
+      box-shadow: 0 0 17.5rem rgba(9, 9, 9, .07);
       transform: translateY(-50%);
       z-index: -1;
+   }
+
+   &::after {
+      right: -7rem;
+   }
+
+   &::before {
+      left: -7rem;
    }
 
    &__title {
