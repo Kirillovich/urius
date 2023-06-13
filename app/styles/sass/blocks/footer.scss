@@ -5,6 +5,7 @@
 
    &__inner {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
    }
 
@@ -31,6 +32,19 @@
          font-weight: 300;
          font-size: 1.3rem;
          letter-spacing: .3px;
+      }
+   }
+
+   &__social {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2.5rem;
+      padding-top: 3rem;
+
+      img {
+         display: block;
+         max-height: 2.3rem;
       }
    }
 }
