@@ -10,13 +10,46 @@
 	<title>Urius</title>
 	<meta name="description" content="Startup HTML template OptimizedHTML 5">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 	<link rel="icon" href="images/favicon.png">
 	<meta property="og:image" content="images/dist/preview.jpg">
-	
+
 	<link rel="stylesheet" href="css/app.min.css">
 
+
+	<script>
+		async function submitForm(event) {
+			event.preventDefault(); // отключаем перезагрузку/перенаправление страницы
+			try {
+				// Формируем запрос
+				const response = await fetch(event.target.action, {
+					method: 'POST',
+					body: new FormData(event.target)
+				});
+				// проверяем, что ответ есть
+				if (!response.ok) throw (`Ошибка при обращении к серверу: ${response.status}`);
+				// проверяем, что ответ действительно JSON
+				const contentType = response.headers.get('content-type');
+				if (!contentType || !contentType.includes('application/json')) {
+					throw ('Ошибка. Ответ не JSON');
+				}
+				// обрабатываем запрос
+				const json = await response.json();
+				if (json.result === "success") {
+					// в случае успеха
+					alert(json.info);
+				} else {
+					// в случае ошибки
+					console.log(json.desc);
+					throw (json.info);
+				}
+			} catch (error) { // обработка ошибки
+				alert(error);
+			}
+		}
+	</script>
 </head>
 
 <body>
@@ -65,7 +98,7 @@
 	<div class="container">
 		<div class="benefits">
 			<div class="benefit benefit--1">
-				<img src="./images/dist/shapes/shape-1.png" alt="" class="benefit__bg">
+				<!-- <img src="./images/dist/shapes/shape-1.png" alt="" class="benefit__bg"> -->
 				<div class="benefit__content">
 					<img src="./images/dist/icon-1.svg" alt="" class="benefit__icon benefit__icon--1">
 					<div class="benefit__title">Более 30%</div>
@@ -73,7 +106,7 @@
 				</div>
 			</div>
 			<div class="benefit benefit--2">
-				<img src="./images/dist/shapes/shape-2.png" alt="" class="benefit__bg">
+				<!-- <img src="./images/dist/shapes/shape-2.png" alt="" class="benefit__bg"> -->
 				<div class="benefit__content">
 					<img src="./images/dist/icon-2.svg" alt="" class="benefit__icon benefit__icon--2">
 					<div class="benefit__title">80% клиентов</div>
@@ -81,7 +114,7 @@
 				</div>
 			</div>
 			<div class="benefit benefit--3">
-				<img src="./images/dist/shapes/shape-3.png" alt="" class="benefit__bg">
+				<!-- <img src="./images/dist/shapes/shape-3.png" alt="" class="benefit__bg"> -->
 				<div class="benefit__content">
 					<img src="./images/dist/icon-case.svg" alt="" class="benefit__icon benefit__icon--3">
 					<div class="benefit__title">С 2010 года</div>
@@ -98,9 +131,10 @@
 			<div class="form__title">Нужно <span>зарегистрировать бизнес</span> быстро и без проблем?</div>
 			<div class="form__subtitle">Оставьте заявку, и мы позвоним в течение 5 минут.</div>
 
-			<form action="#" method="post">
-				<input type="text" placeholder="Ваше имя">
-				<input type="tel" placeholder="Ваш телефон">
+			<form enctype="multipart/form-data" action="send.php" method="post" onsubmit="submitForm(event)">
+
+				<input type="text" name="name" placeholder="Ваше имя">
+				<input type="tel" name="phone" placeholder="Ваш телефон">
 
 				<button type="submit" class="btn btn--rounded form__btn">Получить консультацию</button>
 			</form>
@@ -110,54 +144,299 @@
 
 <section class="section section-advantages">
 	<div class="container">
-		<div class="advantages-flex">
-			<div class="advantages-left">
-				<div class="advantages__subtitle dot">Преимущества</div>
-				<div class="advantages__title">С нами ваш бизнес будет работать</div>
+		<div class="advantages__header">
+			<div class="advantages__subtitle"><span class="dot">Преимущества</span></div>
+			<div class="advantages__title">С нами ваш бизнес будет работать</div>
+		</div>
+		<div class="advantages">
+			<div class="advantage advantage--1">
+				<div class="advantage__content">
+					<img src="./images/dist/icon-pin.png" alt="">
+					<div class="advantage__title">Беспроблемные и легальные адреса</div>
+					<div class="advantage__text">Предлагаем только чистые адреса, которые соответствуют стандартам и правилам для налоговой.</div>
+				</div>
 			</div>
-			<div class="advantages-right">
-				<div class="advantages">
-					<div class="advantage advantage--1">
-						<div class="advantage__content">
-							<img src="./images/dist/icon-advantage.png" alt="">
-							<div class="advantage__title">Опытный персонал</div>
-							<div class="advantage__text">Найдите исполнителя у другой компании на определённое время!</div>
+			<div class="advantage advantage--2">
+				<div class="advantage__content">
+					<img src="./images/dist/icon-building.png" alt="">
+					<div class="advantage__title">Реальные офисы от собственника</div>
+					<div class="advantage__text">Предоставляем адреса существующих офисов, мы предоставляем возможность ознакомиться с объектом перед арендой.</div>
+				</div>
+			</div>
+			<div class="advantage advantage--3">
+				<div class="advantage__content">
+					<img src="./images/dist/icon-toolkit.png" alt="">
+					<div class="advantage__title">Корреспонденция</div>
+					<div class="advantage__text">Почтовое обслуживание для всех наших клиентов полностью бесплатно.</div>
+				</div>
+			</div>
+			<div class="advantage advantage--4">
+				<div class="advantage__content">
+					<img src="./images/dist/icon-reputation.png" alt="">
+					<div class="advantage__title">Репутация</div>
+					<div class="advantage__text">У нас отличная репутация, вы можете на нас рассчитывать как десятки наших клиентов.</div>
+				</div>
+			</div>
+			<div class="advantage advantage--5">
+				<div class="advantage__content">
+					<img src="./images/dist/icon-money.png" alt="">
+					<div class="advantage__title">Безналичный расчет</div>
+					<div class="advantage__text">Благодаря честному бизнесу и уплате налогов, к вам никто не будет придираться. Так как мы ведем всю полностью отчестность и бухгалтерию в белую.</div>
+				</div>
+			</div>
+			<div class="advantage advantage--6">
+				<div class="advantage__content">
+					<img src="./images/dist/icon-tax.png" alt="">
+					<div class="advantage__title">Налаженная коммуникация с налоговой</div>
+					<div class="advantage__text">За многие годы работы мы установили хорошие связи с налоговыми органами и наш персонал тщательно следит за актуальностью наших юридических адресов, благодаря этому у нас никогда не возникает проблем с оформлением бизнеса.</div>
+				</div>
+			</div>
+			<div class="advantage advantage--7">
+				<div class="advantage__content">
+					<img src="./images/dist/icon-human.png" alt="">
+					<div class="advantage__title">Возможность попасть в офис</div>
+					<div class="advantage__text">В случае налоговой проверки мы предоставляем Вам офис для встречи с работниками ИФНС по адресу, указанному в учредительных документах Вашей компании</div>
+				</div>
+			</div>
+			<div class="advantage advantage--8">
+				<div class="advantage__content">
+					<img src="./images/dist/icon-shield.png" alt="">
+					<div class="advantage__title">Гарантия</div>
+					<div class="advantage__text">Адрес со 100% гарантией регистрации ООО</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section-how-work">
+	<div class="container">
+		<div class="how-work__subtitle dot">О нас</div>
+		<h2 class="h2 how-work__h2">Как мы работаем</h2>
+		<div class="how-work__path">
+			<div class="how-work__path-block how-work__path-block--1">
+				<div class="how-work__path-number">01</div>
+				<div class="how-work__path-title">Вы оставляете заявку</div>
+			</div>
+			<div class="how-work__path-block how-work__path-block--2">
+				<div class="how-work__path-number">02</div>
+				<div class="how-work__path-title">Мы заключаем договор</div>
+			</div>
+			<div class="how-work__path-block how-work__path-block--3">
+				<div class="how-work__path-number">03</div>
+				<div class="how-work__path-title">Мы подготавливаем документы</div>
+			</div>
+			<div class="how-work__path-block how-work__path-block--4">
+				<div class="how-work__path-number">04</div>
+				<div class="how-work__path-title">Ваш бизнес работает</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section-result">
+	<div class="container">
+		<div class="result">
+			<div class="result-left">
+				<div class="dot result__dot"></div>
+				<div class="result__title">Мы подготовим и <span>доставим необходимые документы в течение 1
+						дня.</span> Для Вас все проходит <span>легко</span> и без лишних заморочек: <span>моментально</span>, точно, словно по-волшебству.
+				</div>
+				<div class="result__bullets">
+					<div class="result__bullet">
+						<img src="./images/dist/icon-check.svg" alt="" class="result__icon">
+						<span>Гарантийное письмо от собственника.</span>
+					</div>
+					<div class="result__bullet">
+						<img src="./images/dist/icon-check.svg" alt="" class="result__icon">
+						<span>Свидетельство о праве собственности.</span>
+					</div>
+					<div class="result__bullet">
+						<img src="./images/dist/icon-check.svg" alt="" class="result__icon">
+						<span>Договор аренды с правом использования адреса в качестве юридического.</span>
+					</div>
+					<div class="result__bullet">
+						<img src="./images/dist/icon-check.svg" alt="" class="result__icon">
+						<span>Акт приема-передачи помещения.</span>
+					</div>
+				</div>
+			</div>
+			<div class="result-right">
+				<img src="./images/dist/result-right-img.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section-form-2">
+	<div class="container">
+		<div class="form form--1">
+			<div class="form__title">Нужно <span>зарегистрировать бизнес</span> быстро и без проблем?</div>
+			<div class="form__subtitle">Оставьте заявку, и мы позвоним в течение 5 минут.</div>
+
+			<form enctype="multipart/form-data" action="send.php" method="post" onsubmit="submitForm(event)">
+				<input type="text" name="name" placeholder="Ваше имя">
+				<input type="tel" name="phone" placeholder="Ваш телефон">
+
+				<button type="submit" class="btn btn--rounded form__btn">Получить консультацию</button>
+			</form>
+		</div>
+	</div>
+</section>
+
+<section class="section section-office">
+	<div class="container">
+		<div class="office">
+			<div class="office__left">
+				<div class="office__bullets">
+					<div class="office__bullet">
+						<div class="office__number">01</div>
+						<div class="office__title">
+							<img src="./images/dist/icon-pin.svg" alt="">
+							<span>Все адреса от собственника</span>
 						</div>
 					</div>
-					<div class="advantage advantage--2">
-						<div class="advantage__content">
-							<img src="./images/dist/icon-advantage.png" alt="">
-							<div class="advantage__title">Опытный персонал</div>
-							<div class="advantage__text">Найдите исполнителя у другой компании на определённое время!</div>
+					<div class="office__bullet">
+						<div class="office__number">02</div>
+						<div class="office__title">
+							<img src="./images/dist/icon-house.svg" alt="">
+							<span>Любой район СПБ и ЛО</span>
 						</div>
 					</div>
-					<div class="advantage advantage--3">
-						<div class="advantage__content">
-							<img src="./images/dist/icon-advantage.png" alt="">
-							<div class="advantage__title">Опытный персонал</div>
-							<div class="advantage__text">Найдите исполнителя у другой компании на определённое время!</div>
+					<div class="office__bullet">
+						<div class="office__number">03</div>
+						<div class="office__title">
+							<img src="./images/dist/icon-chair.svg" alt="">
+							<span>Офисы мебелированы</span>
 						</div>
 					</div>
-					<div class="advantage advantage--4">
-						<div class="advantage__content">
-							<img src="./images/dist/icon-advantage.png" alt="">
-							<div class="advantage__title">Опытный персонал</div>
-							<div class="advantage__text">Найдите исполнителя у другой компании на определённое время!</div>
+					<div class="office__bullet">
+						<div class="office__number">04</div>
+						<div class="office__title">
+							<img src="./images/dist/icon-flag.svg" alt="">
+							<span>Возможность принять МИФНС</span>
 						</div>
 					</div>
-					<div class="advantage advantage--5">
-						<div class="advantage__content">
-							<img src="./images/dist/icon-advantage.png" alt="">
-							<div class="advantage__title">Опытный персонал</div>
-							<div class="advantage__text">Найдите исполнителя у другой компании на определённое время!</div>
-						</div>
+				</div>
+			</div>
+			<div class="office__right">
+				<div>Выберите <br> <span>свой офис</span></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section-action">
+	<div class="container">
+		<div class="action">
+			<div class="action__left">
+				<div class="action__title">Акция: <span>Регистрация ООО бесплатно!</span></div>
+				<div class="action__content">
+					при покупке юридического адреса на 11 мес. <br>
+					<span>Звоните: 8 (952) 395-95-95</span>
+				</div>
+			</div>
+			<div class="action__right">
+				<div class="action__title">Ликвидация ООО за 4 900 ₽</div>
+				<div class="action__content">
+					(Оформление документов в удобном месте) <br>
+					<span>Звоните: 8 (952) 395-95-95</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section-map"></section>
+
+<section class="section section-districts">
+	<div class="container">
+		<div class="districts">
+			<div class="districts__left">
+				<div class="districts__title">Все районы</div>
+			</div>
+			<div class="districts__right">
+				<div class="district-card">
+					<div class="district-card__left">
+						<img src="./images/dist/district-1.jpg" alt="" class="district-card__img">
+						<div class="district-card__label">мифнс №18</div>
 					</div>
-					<div class="advantage advantage--6">
-						<div class="advantage__content">
-							<img src="./images/dist/icon-advantage.png" alt="">
-							<div class="advantage__title">Опытный персонал</div>
-							<div class="advantage__text">Найдите исполнителя у другой компании на определённое время!</div>
+					<div class="district-card__right">
+						<h4 class="h4 district-card__title">Арсенальная 18</h4>
+						<div class="district-card__info">
+							<div>Первичная регистрация юр. адреса:</div>
+							<div class="district-card__cost">32 500 ₽/11 мес.</div>
+
+							<div>Смена юр. адреса:</div>
+							<div class="district-card__cost">46 000 ₽/11 мес.</div>
+
+							<div>Почтовое обслуживание:</div>
+							<div class="district-card__cost">Бесплатно</div>
 						</div>
+						<button class="btn btn--blue district-card__btn">Заказать адрес</button>
+					</div>
+				</div>
+
+				<div class="district-card">
+					<div class="district-card__left">
+						<img src="./images/dist/district-2.jpg" alt="" class="district-card__img">
+						<div class="district-card__label">мифнс №16</div>
+					</div>
+					<div class="district-card__right">
+						<h4 class="h4 district-card__title">Набережная черной речки д. 16</h4>
+						<div class="district-card__info">
+							<div>Первичная регистрация юр. адреса:</div>
+							<div class="district-card__cost">32 500 ₽/11 мес.</div>
+
+							<div>Смена юр. адреса:</div>
+							<div class="district-card__cost">46 000 ₽/11 мес.</div>
+
+							<div>Почтовое обслуживание:</div>
+							<div class="district-card__cost">Бесплатно</div>
+						</div>
+						<button class="btn btn--blue district-card__btn">Заказать адрес</button>
+					</div>
+				</div>
+
+				<div class="district-card">
+					<div class="district-card__left">
+						<img src="./images/dist/district-3.jpg" alt="" class="district-card__img">
+						<div class="district-card__label">мифнс №18</div>
+					</div>
+					<div class="district-card__right">
+						<h4 class="h4 district-card__title">самсонеский проспект 70</h4>
+						<div class="district-card__info">
+							<div>Первичная регистрация юр. адреса:</div>
+							<div class="district-card__cost">32 500 ₽/11 мес.</div>
+
+							<div>Смена юр. адреса:</div>
+							<div class="district-card__cost">46 000 ₽/11 мес.</div>
+
+							<div>Почтовое обслуживание:</div>
+							<div class="district-card__cost">Бесплатно</div>
+						</div>
+						<button class="btn btn--blue district-card__btn">Заказать адрес</button>
+					</div>
+				</div>
+
+				<div class="district-card">
+					<div class="district-card__left">
+						<img src="./images/dist/district-4.jpg" alt="" class="district-card__img">
+						<div class="district-card__label">мифнс №16</div>
+					</div>
+					<div class="district-card__right">
+						<h4 class="h4 district-card__title">ул. нижегородская 20 (москва)</h4>
+						<div class="district-card__info">
+							<div>Первичная регистрация юр. адреса:</div>
+							<div class="district-card__cost">32 500 ₽/11 мес.</div>
+
+							<div>Смена юр. адреса:</div>
+							<div class="district-card__cost">46 000 ₽/11 мес.</div>
+
+							<div>Почтовое обслуживание:</div>
+							<div class="district-card__cost">Бесплатно</div>
+						</div>
+						<button class="btn btn--blue district-card__btn">Заказать адрес</button>
 					</div>
 				</div>
 			</div>
@@ -165,7 +444,105 @@
 	</div>
 </section>
 
-	<script src="js/app.min.js"></script>
+<section class="section section-about-price">
+	<div class="container">
+		<div class="about-price">
+			<div class="about-price__subtitle dot">Информация</div>
+			<h2 class="h2">О ценах</h2>
+			<div class="about-price__text-1">Аренда адреса стоит <strong>7490 в месяц или 55.000 за 12 месяцев</strong>. Это максимально низкая цена за максимально качественные условия.</div>
+			<h2 class="h2">О ценах</h2>
+			<div class="about-price__blocks">
+				<div class="about-price__block">
+					<img src="./images/dist/icon-price.png" class="about-price__icon" alt="">
+					<div class="about-price__block-text">Мы работаем на рынке <strong>больше 8 лет</strong>. У нас
+						<strong>отличная репутация</strong>, она будет работать на Вас.</div>
+				</div>
+				<div class="about-price__block">
+					<img src="./images/dist/icon-exclamation.png" class="about-price__icon" alt="">
+					<div class="about-price__block-text"><strong>Если юридический адрес предлагается по низкой цене, это может быть признаком недостаточной надежности арендодателя</strong>. В этом случае, вероятно, договор аренды не будет подтвержден, что может привести к проблемам с регистрацией у налоговой.</div>
+				</div>
+			</div>
+			<div class="about-price__text-2">Наша компания гарантирует правильное оформление юридического адреса. Поэтому лучше не рисковать и не обращаться к сомнительным фирмам, предлагающим практически бесплатную аренду адреса. Так как если вы попадете на заметку налоговой по адресу, то уже не огребетесь от лишних проблем.</div>
+		</div>
+	</div>
+</section>
 
+<section class="section section-clients">
+	<div class="container">
+		<h2 class="h2 clients__h2">Если вы – наш клиент</h2>
+		<div class="clients">
+			<div class="client client--1">
+				<div class="client__icon">
+					<img src="./images/dist/icon-medal.svg" alt="">
+				</div>
+				<div class="client__text">У Вас <strong>нет</strong> юридических <strong>проблем</strong> с адресом.</div>
+			</div>
+			<div class="client client--2">
+				<div class="client__icon">
+					<img src="./images/dist/icon-client-2.svg" alt="">
+				</div>
+				<div class="client__text"><strong>Легкая регистрация</strong> с первого раза.</div>
+			</div>
+			<div class="client client--3">
+				<div class="client__icon">
+					<img src="./images/dist/icon-client-3.svg" alt="">
+				</div>
+				<div class="client__text">Поддерживаете <strong>хорошие отношения</strong> с налоговыми органами.</div>
+			</div>
+			<div class="client client--4">
+				<div class="client__icon">
+					<img src="./images/dist/icon-client-4.svg" alt="">
+				</div>
+				<div class="client__text">Мы <strong>Внимательно следим</strong> за вашей почтой.</div>
+			</div>
+			<div class="client client--5">
+				<div class="client__icon">
+					<img src="./images/dist/icon-client-5.svg" alt="">
+				</div>
+				<div class="client__text">Если происходит проверка, то <strong>у вас</strong> есть <strong>реальный офис</strong>, который соответствует вашему юридическому адресу</div>
+			</div>
+			<div class="client client--6">
+				<div class="client__icon">
+					<img src="./images/dist/icon-client-6.svg" alt="">
+				</div>
+				<div class="client__text">Ваш бизнес <strong>процветает</strong>.</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section-form-3">
+	<div class="container">
+		<div class="form form--1">
+			<div class="form__title">Нужно <span>зарегистрировать бизнес</span> быстро и без проблем?</div>
+			<div class="form__subtitle">Оставьте заявку, и мы позвоним в течение 5 минут.</div>
+			<form enctype="multipart/form-data" action="send.php" method="post" onsubmit="submitForm(event)">
+				<input type="text" name="name" placeholder="Ваше имя">
+				<input type="tel" name="phone" placeholder="Ваш телефон">
+				<button type="submit" class="btn btn--rounded form__btn">Получить консультацию</button>
+			</form>
+		</div>
+	</div>
+</section>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__inner">
+				<img src="./images/dist/logo.png" alt="" class="logo">
+				<div class="footer__title">Юридические адреса <br> от собственника</div>
+				<div class="footer__contacts">
+					<a href="tel:+79112100441" class="footer__link">8 (911) 210-04-41</a>
+					<span>Получить консультацию</span>
+				</div>
+				<div class="footer__social">
+					<a href="https://api.whatsapp.com/send/?phone=79112100441" target="_blank"><img src="./images/dist/icon-whatsapp.png" alt=""></a>
+					<a href="https://t.me/MaxPodRus" target="_blank"><img src="./images/dist/icon-telegram.png" alt=""></a>
+					<a href="mailto:estyle@list.ru"><img src="./images/dist/icon-mail.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script src="js/app.min.js"></script>
 </body>
 </html>

@@ -38,9 +38,10 @@
 			<div class="form__title">Нужно <span>зарегистрировать бизнес</span> быстро и без проблем?</div>
 			<div class="form__subtitle">Оставьте заявку, и мы позвоним в течение 5 минут.</div>
 
-			<form action="#" method="post">
-				<input type="text" placeholder="Ваше имя">
-				<input type="tel" placeholder="Ваш телефон">
+			<form enctype="multipart/form-data" action="send.php" method="post" onsubmit="submitForm(event)">
+
+				<input type="text" name="name" placeholder="Ваше имя">
+				<input type="tel" name="phone" placeholder="Ваш телефон">
 
 				<button type="submit" class="btn btn--rounded form__btn">Получить консультацию</button>
 			</form>
@@ -180,9 +181,9 @@
 			<div class="form__title">Нужно <span>зарегистрировать бизнес</span> быстро и без проблем?</div>
 			<div class="form__subtitle">Оставьте заявку, и мы позвоним в течение 5 минут.</div>
 
-			<form action="#" method="post">
-				<input type="text" placeholder="Ваше имя">
-				<input type="tel" placeholder="Ваш телефон">
+			<form enctype="multipart/form-data" action="send.php" method="post" onsubmit="submitForm(event)">
+				<input type="text" name="name" placeholder="Ваше имя">
+				<input type="tel" name="phone" placeholder="Ваш телефон">
 
 				<button type="submit" class="btn btn--rounded form__btn">Получить консультацию</button>
 			</form>
@@ -422,9 +423,9 @@
 		<div class="form form--1">
 			<div class="form__title">Нужно <span>зарегистрировать бизнес</span> быстро и без проблем?</div>
 			<div class="form__subtitle">Оставьте заявку, и мы позвоним в течение 5 минут.</div>
-			<form action="#" method="post">
-				<input type="text" placeholder="Ваше имя">
-				<input type="tel" placeholder="Ваш телефон">
+			<form enctype="multipart/form-data" action="send.php" method="post" onsubmit="submitForm(event)">
+				<input type="text" name="name" placeholder="Ваше имя">
+				<input type="tel" name="phone" placeholder="Ваш телефон">
 				<button type="submit" class="btn btn--rounded form__btn">Получить консультацию</button>
 			</form>
 		</div>
