@@ -22,7 +22,14 @@
 
 	<script>
 		async function submitForm(event) {
+			const pattern = /^\d+$/;
+			let name = event.target.querySelector('input[name="name"]');
+			let phone = event.target.querySelector('input[name="phone"]').value;
 			event.preventDefault(); // отключаем перезагрузку/перенаправление страницы
+			if (!phone || !pattern.test(phone)) {
+				alert('Поле "Телефон" обязательно должно быть заполнено и может состоять только из цифр!');
+				return false;
+			}
 			try {
 				// Формируем запрос
 				const response = await fetch(event.target.action, {
@@ -40,6 +47,7 @@
 				const json = await response.json();
 				if (json.result === "success") {
 					// в случае успеха
+					event.target.reset();
 					alert(json.info);
 				} else {
 					// в случае ошибки
