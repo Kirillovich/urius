@@ -40,7 +40,7 @@ if (!error_get_last()) {
     
     // Получатель письма
     $mail->addAddress('kirillov333@list.ru');  
-    //$mail->addAddress('poluchatel2@gmail.com'); // Ещё один, если нужен
+    $mail->addAddress('estyle@list.ru');
     
     // Прикрипление файлов к письму
     if (!empty($file['name'][0])) {

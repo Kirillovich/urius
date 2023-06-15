@@ -35,6 +35,10 @@ img {
    margin: 0 auto;
 }
 
+.modal {
+   display: none;
+}
+
 .section {
    padding: 6rem 0
 }
@@ -512,8 +516,9 @@ img {
 
    &__content {
       line-height: 1.6;
-      span {
-         font-weight: bold;
+      a {
+         text-decoration: none;
+         color: currentColor;
       }
    }
 }
