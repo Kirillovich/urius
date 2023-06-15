@@ -41,6 +41,16 @@
             background-size: 30%;
             opacity: 1;
          }
+
+         img {
+            transition: all .2s;
+         }
+
+         &:hover {
+            img {
+               filter: brightness(60%);
+            }
+         }
       }
    }
 

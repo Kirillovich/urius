@@ -21,9 +21,14 @@
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.autoplay.umd.js"></script>
 <script>
+	Fancybox.bind("[data-fancybox='arsenal']");
+	Fancybox.bind("[data-fancybox='blackriver']");
+	Fancybox.bind("[data-fancybox='nizhegorodskay']");
+	Fancybox.bind("[data-fancybox='samson']");
+
 	new Carousel(document.getElementById("myCarousel"), {
 		Autoplay: {
-			timeout: 2000
+			timeout: 4000
 		}
 	}, {
 		Autoplay

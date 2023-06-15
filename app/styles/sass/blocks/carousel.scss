@@ -4,7 +4,17 @@
    --f-progress-color: #2DB1FB;
 
    &__slide {
-      padding: 50px;
-      background: #eee;
+      display: flex;
+      justify-content: space-between;
+      gap: 0 1rem;
+
+      img {
+         flex-basis: 100%;
+         max-height: 15rem;
+      }
+   }
+
+   &__dots {
+      margin-bottom: -2.5rem !important;
    }
 }
