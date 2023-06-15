@@ -9,19 +9,51 @@
 
    &__left {
       position: relative;
-      flex-basis: 38%;
+      flex-basis: 35%;
       flex-shrink: 0;
+
+      & > a {
+         display: block;
+         height: 100%;
+         position: relative;
+         overflow: hidden;
+
+         &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+            top: 0;
+            background: #000 url('../images/dist/icon-research.png') center no-repeat;
+            background-size: 70%;
+            transform: scale(2);
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            opacity: 0;
+            transition: all .2s ease-out;
+         }
+
+         &:hover::after {
+            overflow: initial;
+            transform: scale(1);
+            background: url('../images/dist/icon-research.png') center no-repeat;
+            background-size: 30%;
+            opacity: 1;
+         }
+      }
    }
 
    &__right {
       display: flex;
       flex-direction: column;
-      padding: 2rem;
+      padding: 2rem 1.8rem 1.8rem;
+      flex-grow: 1;
    }
 
    &__title {
       font-size: 1.4rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.3rem;
    }
 
    &__label {
@@ -47,8 +79,8 @@
       grid-template-rows: repeat(3, min-content);
       font-size: 1.2rem;
       line-height: 1.2;
-      row-gap: 2rem;
-      margin-bottom: 2rem;
+      row-gap: 1.5rem;
+      margin-bottom: 1.7rem;
    }
 
    &__cost {

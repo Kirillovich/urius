@@ -4,7 +4,8 @@
    }
 
    .header {
-      height: 90vh;
+      min-height: 75vh;
+      min-height: initial;
    }
 
    .result {
@@ -106,6 +107,7 @@
       padding: 3rem 2rem;
       filter: none;
       box-shadow: 0 0 5rem rgba(0, 0, 0, .15);
+      align-self: initial;
 
       &__text {
          padding: 0 !important;
@@ -115,7 +117,7 @@
 
 @media screen and (max-width: 900px) {
    .header {
-      height: 75vh;
+      min-height: 55vh;
 
       &__btn {
          padding: 2rem 7rem;
@@ -282,7 +284,7 @@
    }
 
    .header {
-      height: 60vh;
+      min-height: 50vh;
 
       &-composition {
          &__title {

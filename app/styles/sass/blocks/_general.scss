@@ -63,6 +63,10 @@ img {
    min-height: 30rem;
    flex-basis: 25%;
 
+   &:hover img {
+      animation: buzz-out 1 linear 1s;
+   }
+
    &--1 {
       background: url('../images/dist/shapes/shape-1.png') center no-repeat;
       background-size: contain;
@@ -164,6 +168,12 @@ img {
 }
 
 .advantage {
+
+   &:hover {
+      img {
+         animation: buzz-out 1 linear 1s;
+      }
+   }
 
    &__content {
       height: 100%;
@@ -412,6 +422,12 @@ img {
       position: relative;
       padding-bottom: 3rem;
 
+      &:hover {
+         img {
+            animation: buzz-out 1 linear 1s;
+         }
+      }
+
       &::before {
          content: '';
          position: absolute;
@@ -599,6 +615,12 @@ img {
       background: $white;
       font-weight: 500;
       text-align: left;
+
+      &:hover {
+         img {
+            animation: buzz-out 1 linear 1s;
+         }
+      }
    }
 
    &__icon {
@@ -646,6 +668,12 @@ img {
    text-align: center;
    padding-top: 3.5rem;
    line-height: 1.3;
+
+   &:hover {
+      img {
+         animation: buzz-out 1 linear 1s;
+      }
+   }
    
    &--1 {
       background: url('../images/dist/shapes/client-shape-1.png') left .7rem top no-repeat;
@@ -673,6 +701,8 @@ img {
       background: url('../images/dist/shapes/client-shape-4.png') left bottom no-repeat;
       filter: drop-shadow(-1rem 1rem 2rem rgba(0, 0, 0, .1));
       background-size: 100% 105%;
+      align-self: self-start;
+      padding-bottom: 8rem;
    }
 
    &--5 {
@@ -686,6 +716,8 @@ img {
       background: url('../images/dist/shapes/client-shape-6.png') left bottom no-repeat;
       filter: drop-shadow(1rem 1rem 2rem rgba(0, 0, 0, .1));
       background-size: cover;
+      align-self: self-start;
+      padding-bottom: 10rem;
    }
 
    &__icon {
@@ -708,11 +740,6 @@ img {
       margin-top: -1.5rem;
       padding: 0 2.5rem;
    }
-}
-
-.section-map {
-   min-height: 30rem;
-   background: url('../images/dist/map.jpg') center/cover no-repeat;
 }
 
 .section-form-2 {

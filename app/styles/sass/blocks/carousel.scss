@@ -1,0 +1,10 @@
+.f-carousel {
+   --f-carousel-spacing: 10px;
+   --f-carousel-slide-width: 100%;
+   --f-progress-color: #2DB1FB;
+
+   &__slide {
+      padding: 50px;
+      background: #eee;
+   }
+}
