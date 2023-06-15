@@ -254,7 +254,10 @@ img {
 .section-how-work {
    padding-bottom: 15rem;
    text-align: center;
-   background-image: linear-gradient(to bottom, rgba(230, 244, 251, 0.9), rgba(242, 248, 251, 0.9));
+   background: 
+      url('../images/dist/about-us-bg.png') left top 4rem no-repeat,
+      linear-gradient(to bottom, rgba(230, 244, 251, 0.9), rgba(242, 248, 251, 0.9));
+   background-size: 100%, 100%;
 }
 
 .how-work {
@@ -572,7 +575,7 @@ img {
    &__text-1 {
       font-weight: 300;
       font-size: 4rem;
-      padding-bottom: 5rem;
+      padding: 0 5rem 5rem;
       margin-bottom: 7rem;
       position: relative;
 

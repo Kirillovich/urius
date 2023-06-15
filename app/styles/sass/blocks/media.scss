@@ -113,6 +113,14 @@
          padding: 0 !important;
       }
    }
+
+   .about-price {
+      &__text-1 {
+         br {
+            display: none;
+         }
+      }
+   }
 }
 
 @media screen and (max-width: 900px) {
