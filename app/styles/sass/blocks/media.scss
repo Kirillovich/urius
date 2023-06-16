@@ -20,6 +20,15 @@
       }
    }
 
+   .benefit {
+      background-size: 100% 100%;
+      background-position: left top;
+
+      &--3 {
+         background-position: right top;
+      }
+   }
+
    .districts {
       &__left {   
          padding: 0 3rem 0 0;
@@ -57,12 +66,31 @@
    }
 
    .advantage {
-      background: #fbfbfb;
-      box-shadow: 0 0 4rem rgba(0, 0, 0, .1);
-      padding: 3rem 2rem;
+      background-size: cover;
+      padding: 4.5rem 2rem;
 
       &__content {
          padding: 0;
+      }
+
+      &--1 {
+         padding-left: 3rem;
+      }
+
+      &--2 {
+         background-position: center;
+      }
+
+      &--3 {
+         background-position: center;
+      }
+
+      &--5 {
+         padding-left: 3rem;
+      }
+
+      &--8 {
+         background-size: 150%;
       }
    }
 
@@ -72,42 +100,42 @@
       }
    }
 
-   .benefits {
-      gap: 3rem;
-   }
-
-   .benefit {
-      &--1 {
-         background: url('../images/dist/shapes/shape-rounded-1.jpg') left top no-repeat;
-         background-size: cover;
-      }
-
-      &--2 {
-         background: url('../images/dist/shapes/shape-rounded-2.jpg') left top no-repeat;
-         background-size: cover;
-      }
-
-      &--3 {
-         background: url('../images/dist/shapes/shape-rounded-3.jpg') left top no-repeat;
-         background-size: cover;
-      }
-
-      &__content {
-         padding: 3rem 2rem 2rem;
-      }
-   }
-
    .clients {
-      grid-template-rows: repeat(2, min-content);
-      gap: 3rem;
+      gap: 1.5rem;
+      width: 95%;
    }
 
    .client {
-      background: #fbfbfb;
-      padding: 3rem 2rem;
-      filter: none;
-      box-shadow: 0 0 5rem rgba(0, 0, 0, .15);
+      background-size: cover;
+      padding: 4rem 3rem;
       align-self: initial;
+
+      &--1 {
+         padding-left: 4.5rem;
+      }
+
+      &--2 {
+         background-position: top center;
+      }
+
+      &--3 {
+         background-position: top right;
+      }
+
+      &--4 {
+         align-self: self-start;
+         padding-bottom: 10rem;
+      }
+
+      &--5 {
+         padding-bottom: 6rem;
+      }
+
+      &--6 {
+         background-position: right bottom;
+         align-self: self-start;
+         padding-bottom: 12rem;
+      }
 
       &__text {
          padding: 0 !important;
@@ -159,6 +187,15 @@
       grid-template-columns: repeat(2, 1fr);
    }
 
+   .advantage {
+      background: #fbfbfb;
+      padding: 2rem;
+
+      &__title {
+         max-width: initial;
+      }
+   }
+
    .result {
       flex-wrap: wrap;
 
@@ -169,12 +206,21 @@
       }
    }
 
-   .benefits {
-      gap: 1.5rem;
-   }
-
    .benefit {
-      flex-basis: 33.333333%;
+      min-height: 33rem;
+
+      &__title {
+         margin-top: 2rem;
+         line-height: 1.3;
+      }
+
+      &__content {
+         padding: 5rem 4rem 0;
+      }
+
+      &__text {
+         font-size: 1.3rem;
+      }
    }
 
    .districts {
@@ -208,6 +254,10 @@
       &__right {
          flex-basis: 65%;
       }
+   }
+
+   .section-action {
+      padding-bottom: 0;
    }
 
    .action {
@@ -261,9 +311,9 @@
    }
 
    .clients {
-      width: 100%;
-      gap: 1.5rem;
-      grid-template-columns: repeat(2, 1fr);
+      // width: 100%;
+      // gap: 1.5rem;
+      // grid-template-columns: repeat(2, 1fr);
    }
 
    .how-work__path {
@@ -278,6 +328,49 @@
 
    .form {
       padding: 2.5rem 5rem;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .benefit {
+      min-height: initial;
+
+      &__title {
+         margin: 1rem 0;
+      }
+
+      &__content {
+         padding: 3rem 1rem 6rem;
+      }
+
+      &--1 {
+         background: url('../images/dist/shapes/shape-rounded-1.jpg') left top no-repeat;
+         background-size: cover;
+      }
+
+      &--2 {
+         background: url('../images/dist/shapes/shape-rounded-2.jpg') left top no-repeat;
+         background-size: cover;
+      }
+
+      &--3 {
+         background: url('../images/dist/shapes/shape-rounded-3.jpg') left top no-repeat;
+         background-size: cover;
+      }
+   }
+
+   .clients {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, min-content);
+   }
+
+   .client {
+      background: #fbfbfb;
+      padding: 3rem 2rem;
+      align-self: initial;
+      font-size: 1.4rem;
+      filter: none;
+      box-shadow: 0 0 4rem rgba(0,0,0,.1);
    }
 }
 
@@ -333,13 +426,16 @@
    }
 
    .benefits {
-      flex-wrap: wrap;
+      grid-template-columns: 1fr;
    }
 
    .benefit {
-      flex-basis: 100%;
       min-height: initial;
       padding: 2rem 2rem 3rem;
+
+      &__content {
+         padding: 1rem 1rem 3rem;
+      }
    }
 
    .form {
@@ -444,10 +540,6 @@
       & > div {
          flex-basis: 100%;
       }
-
-      &__left {
-         
-      }
    }
 
    .about-price {
@@ -476,6 +568,17 @@
 
    .clients {
       grid-template-columns: 1fr;
+      width: 100%;
+   }
+
+   .client {
+      &__text {
+         font-size: 1.6rem;
+      }
+   }
+
+   .section-consumers {
+      padding-bottom: 0;
    }
 
    .footer {
@@ -492,4 +595,9 @@
       }
    }
 
+   .f-carousel {
+      &__slide {
+         grid-template-columns: repeat(2, 1fr);
+      }
+   }
 }

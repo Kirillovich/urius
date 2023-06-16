@@ -71,7 +71,7 @@
 				<div class="header-top__title">Юридические адреса <br> от собственника</div>
 				<div class="header-top__contacts">
 					<div>
-						<a href="tel:+79523959595" class="header-top__link">8 (952) 395-95-95</a>
+						<a href="tel:+79112100441" class="header-top__link">8 (911) 210-04-41</a>
 						<span>Получить консультацию</span>
 					</div>
 				</div>
@@ -98,7 +98,7 @@
 					</div>
 				</div>
 
-				<a href="#" class="header__btn btn btn--gradient">Подробнее</a>
+				<a data-fancybox="modal1" href="#modal" class="header__btn btn btn--gradient">Подробнее</a>
 			</div>
 
 		</div>
@@ -351,14 +351,14 @@
 				<div class="action__title">Акция: <span>Регистрация ООО бесплатно!</span></div>
 				<div class="action__content">
 					при покупке юридического адреса на 11 мес. <br>
-					<span>Звоните: 8 (952) 395-95-95</span>
+					<strong>Звоните: <a href="tel:+79112100441">8 (911) 210-04-41</a></strong>
 				</div>
 			</div>
 			<div class="action__right">
 				<div class="action__title">Ликвидация ООО за 4 900 ₽</div>
 				<div class="action__content">
 					(Оформление документов в удобном месте) <br>
-					<span>Звоните: 8 (952) 395-95-95</span>
+					<strong>Звоните: <a href="tel:+79112100441">8 (911) 210-04-41</a></strong>
 				</div>
 			</div>
 		</div>
@@ -397,7 +397,7 @@
 							<div>Почтовое обслуживание:</div>
 							<div class="district-card__cost">Бесплатно</div>
 						</div>
-						<button class="btn btn--blue district-card__btn">Заказать адрес</button>
+						<a data-fancybox="modal2" href="#modal" class="btn btn--blue district-card__btn">Заказать адрес</a>
 					</div>
 				</div>
 
@@ -447,7 +447,7 @@
 							<div>Почтовое обслуживание:</div>
 							<div class="district-card__cost">Бесплатно</div>
 						</div>
-						<button class="btn btn--blue district-card__btn">Заказать адрес</button>
+						<a data-fancybox="modal3" href="#modal" class="btn btn--blue district-card__btn">Заказать адрес</a>
 					</div>
 				</div>
 
@@ -512,7 +512,7 @@
 							<div>Почтовое обслуживание:</div>
 							<div class="district-card__cost">Бесплатно</div>
 						</div>
-						<button class="btn btn--blue district-card__btn">Заказать адрес</button>
+						<a data-fancybox="modal4" href="#modal" class="btn btn--blue district-card__btn">Заказать адрес</a>
 					</div>
 				</div>
 
@@ -562,7 +562,7 @@
 							<div>Почтовое обслуживание:</div>
 							<div class="district-card__cost">Бесплатно</div>
 						</div>
-						<button class="btn btn--blue district-card__btn">Заказать адрес</button>
+						<a data-fancybox="modal5" href="#modal" class="btn btn--blue district-card__btn">Заказать адрес</a>
 					</div>
 				</div>
 
@@ -722,28 +722,18 @@
 		<h2 class="h2">Наши клиенты</h2>
 		<div class="f-carousel" id="myCarousel">
 			<div class="f-carousel__slide">
-				<img src="./images/dist/clients/one.jpg" alt="">
-				<img src="./images/dist/clients/two.jpg" alt="">
-				<img src="./images/dist/clients/three.jpg" alt="">
-				<img src="./images/dist/clients/one.jpg" alt="">
-				<img src="./images/dist/clients/two.jpg" alt="">
-				<img src="./images/dist/clients/three.jpg" alt="">
-			</div>
-			<div class="f-carousel__slide">
-				<img src="./images/dist/clients/three.jpg" alt="">
-				<img src="./images/dist/clients/two.jpg" alt="">
-				<img src="./images/dist/clients/one.jpg" alt="">
-				<img src="./images/dist/clients/one.jpg" alt="">
-				<img src="./images/dist/clients/two.jpg" alt="">
-				<img src="./images/dist/clients/three.jpg" alt="">
-			</div>
-			<div class="f-carousel__slide">
-				<img src="./images/dist/clients/two.jpg" alt="">
-				<img src="./images/dist/clients/three.jpg" alt="">
-				<img src="./images/dist/clients/one.jpg" alt="">
-				<img src="./images/dist/clients/two.jpg" alt="">
-				<img src="./images/dist/clients/one.jpg" alt="">
-				<img src="./images/dist/clients/three.jpg" alt="">
+				<div class="f-carousel__block">
+					<img src="./images/dist/partners/partner-1.jpg" alt="">
+				</div>
+				<div class="f-carousel__block">
+					<img src="./images/dist/partners/partner-3.jpg" alt="">
+				</div>
+				<div class="f-carousel__block">
+					<img src="./images/dist/partners/partner-2.jpg" alt="">
+				</div>
+				<div class="f-carousel__block">
+					<img src="./images/dist/partners/partner-4.jpg" alt="">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -769,7 +759,7 @@
 			<img src="./images/dist/logo.png" alt="" class="logo">
 			<div class="footer__title">Юридические адреса <br> от собственника</div>
 			<div class="footer__contacts">
-				<a href="tel:+79523959595" class="footer__link">8 (952) 395-95-95</a>
+				<a href="tel:+79112100441" class="footer__link">8 (911) 210-04-41</a>
 				<span>Получить консультацию</span>
 			</div>
 			<div class="footer__social">
@@ -782,6 +772,21 @@
 	</div>
 </footer>
 
+<div class="modal" id="modal">
+	<div class="form form--1">
+		<div class="form__title">Нужно <span>зарегистрировать бизнес</span> быстро и без проблем?</div>
+		<div class="form__subtitle">Оставьте заявку, и мы позвоним в течение 5 минут.</div>
+
+		<form enctype="multipart/form-data" action="send.php" method="post" onsubmit="submitForm(event)">
+
+			<input type="text" name="name" placeholder="Ваше имя">
+			<input type="tel" name="phone" placeholder="Ваш телефон">
+
+			<button type="submit" class="btn btn--rounded form__btn">Получить консультацию</button>
+		</form>
+	</div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.autoplay.umd.js"></script>
@@ -790,6 +795,15 @@
 	Fancybox.bind("[data-fancybox='blackriver']");
 	Fancybox.bind("[data-fancybox='nizhegorodskay']");
 	Fancybox.bind("[data-fancybox='samson']");
+	Fancybox.bind("[data-fancybox='modal1']");
+	Fancybox.bind("[data-fancybox='modal2']");
+	Fancybox.bind("[data-fancybox='modal3']");
+	Fancybox.bind("[data-fancybox='modal4']");
+	Fancybox.bind("[data-fancybox='modal5']");
+
+	// new Carousel(document.getElementById("modal"), {
+	// 	Navigation: false
+	// });
 
 	new Carousel(document.getElementById("myCarousel"), {
 		Autoplay: {
@@ -801,4 +815,5 @@
 </script>
 <script src="js/app.min.js"></script>
 </body>
+
 </html>
