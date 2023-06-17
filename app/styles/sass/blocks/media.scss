@@ -24,6 +24,16 @@
       background-size: 100% 100%;
       background-position: left top;
 
+      &__content {
+         padding: 7rem 3rem 0;
+      }
+
+      &--1 {
+         .benefit__content {
+            padding-left: 5rem;
+         }
+      }
+
       &--3 {
          background-position: right top;
       }
@@ -66,7 +76,7 @@
    }
 
    .advantage {
-      background-size: cover;
+      background-size: 100% 100%;
       padding: 4.5rem 2rem;
 
       &__content {
@@ -86,11 +96,18 @@
       }
 
       &--5 {
+         align-self: self-start;
          padding-left: 3rem;
+         padding-bottom: 11rem;
+      }
+
+      &--6 {
+         padding-bottom: 6.5rem;
       }
 
       &--8 {
-         background-size: 150%;
+         align-self: self-start;
+         padding-bottom: 7rem;
       }
    }
 
@@ -101,13 +118,13 @@
    }
 
    .clients {
-      gap: 1.5rem;
-      width: 95%;
+      gap: 2rem;
+      width: 85%;
    }
 
    .client {
-      background-size: cover;
-      padding: 4rem 3rem;
+      background-size: 100% 100%;
+      padding: 4rem 2rem;
       align-self: initial;
 
       &--1 {
@@ -124,7 +141,7 @@
 
       &--4 {
          align-self: self-start;
-         padding-bottom: 10rem;
+         padding-bottom: 8rem;
       }
 
       &--5 {
@@ -134,7 +151,7 @@
       &--6 {
          background-position: right bottom;
          align-self: self-start;
-         padding-bottom: 12rem;
+         padding-bottom: 10rem;
       }
 
       &__text {
@@ -190,6 +207,7 @@
    .advantage {
       background: #fbfbfb;
       padding: 2rem;
+      align-self: initial;
 
       &__title {
          max-width: initial;
@@ -215,7 +233,13 @@
       }
 
       &__content {
-         padding: 5rem 4rem 0;
+         padding: 5rem 2.5rem 0;
+      }
+
+      &--1 {
+         .benefit__content {
+            padding-left: 3.5rem;
+         }
       }
 
       &__text {
@@ -310,12 +334,6 @@
       }
    }
 
-   .clients {
-      // width: 100%;
-      // gap: 1.5rem;
-      // grid-template-columns: repeat(2, 1fr);
-   }
-
    .how-work__path {
       flex-wrap: wrap;
       gap: 2rem;
@@ -329,6 +347,16 @@
    .form {
       padding: 2.5rem 5rem;
    }
+
+   .clients {
+      width: 93%;
+   }
+
+   .client {
+      &__text {
+         font-size: 1.4rem;
+      }
+   }
 }
 
 @media screen and (max-width: 768px) {
@@ -336,16 +364,29 @@
       min-height: initial;
 
       &__title {
+         font-size: 1.8rem;
          margin: 1rem 0;
       }
 
+      &__icon {
+         max-height: 4.5rem;
+      }
+
       &__content {
-         padding: 3rem 1rem 6rem;
+         padding: 3rem 1.5rem 5rem;
+      }
+
+      &__text {
+         font-size: 1.2rem;
       }
 
       &--1 {
          background: url('../images/dist/shapes/shape-rounded-1.jpg') left top no-repeat;
          background-size: cover;
+
+         .benefit__content {
+            padding-left: 1.5rem;
+         }
       }
 
       &--2 {
@@ -435,6 +476,14 @@
 
       &__content {
          padding: 1rem 1rem 3rem;
+      }
+
+      &__text {
+         font-size: 1.6rem;
+      }
+
+      &__icon {
+         max-height: 5.5rem;
       }
    }
 
